@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
      $cep=$_POST['cep'];
     $contato= ControlerStaticActions::clearNumbers($_POST['contato']);
      $cpf=$_POST['cpf'];
-    $cpf= ControlerStaticActions::clearNumbers($cpg);
+    $cpf= ControlerStaticActions::clearNumbers($cpf);
    $person = new Person($nome, $email, $senha, $endereco, $bairro, $cidade, $uf, $cep, $contato, $cpf);
    $insert = new Insert();
   if( $insert->insertPerson($person)){
