@@ -140,7 +140,7 @@ submit.addEventListener("click", async (evt) => {
     message.textContent = res;
 
     message.classList.remove("hidden");
-    if (res !== "cadastrado com sucesso") {
+    if (res !== "cadastrado com sucesso !!") {
       message.classList.remove("success");
       message.classList.add("error");
     } else {
