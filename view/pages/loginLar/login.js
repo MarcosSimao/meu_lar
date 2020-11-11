@@ -1,4 +1,4 @@
-const loginButton = document.getElementById("buttonSubmit");
+const loginButton = document.getElementById("loginButton");
 
 const formData = new FormData();
 
