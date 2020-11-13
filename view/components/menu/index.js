@@ -1,57 +1,105 @@
 const menu = () => {
   const div = document.createElement("div");
+  div.classList.add("menu");
 
-  div.style.width = "100%";
-  div.style.height = "8vh";
-  div.style.background = "#2278fa";
-  div.style.position = "absolute";
-  div.style.display = "flex";
-  div.style.alignItems = "center";
-  div.style.justifyContent = "space-around";
+  let showLogin = false;
+  let showRegister = false;
 
-  const title = document.createElement("h1");
+  const title = document.createElement("a");
+  title.classList.add("title");
+  title.href = "/";
   title.textContent = "Meu Lar";
-  title.style.color = "#fff";
-  title.style.margin = 0;
 
   const login = document.createElement("div");
+  login.classList.add("login");
+
+  const register = document.createElement("div");
+  register.classList.add("register");
 
   const buttons = document.createElement("div");
-  buttons.style.width = "50%";
+  buttons.classList.add("buttons");
 
   const loginButton = document.createElement("button");
   loginButton.textContent = "Login";
-  loginButton.style.background = "transparent";
-  loginButton.style.color = "#fff";
-  loginButton.style.border = "none";
-  loginButton.style.textTransform = "uppercase";
-  loginButton.style.fontSize = "1rem";
-  loginButton.style.fontFamily = "Open Sans";
-  loginButton.style.fontWeight = "700";
-  loginButton.style.textDecoration = "underline";
-  loginButton.style.cursor = "pointer";
-  loginButton.style.padding = "15px";
-  loginButton.style.width = "10%";
+  loginButton.classList.add("loginButton");
 
   const registerButton = document.createElement("button");
   registerButton.textContent = "Registrar";
-  registerButton.style.background = "transparent";
-  registerButton.style.color = "#fff";
-  registerButton.style.border = "none";
-  registerButton.style.textTransform = "uppercase";
-  registerButton.style.fontSize = "1rem";
-  registerButton.style.fontFamily = "Open Sans";
-  registerButton.style.fontWeight = "700";
-  registerButton.style.textDecoration = "underline";
-  registerButton.style.cursor = "pointer";
-  registerButton.style.padding = "15px";
-  registerButton.style.width = "10%";
+  registerButton.classList.add("registerButton");
+
+  const linkToRegister = document.createElement("a");
+  linkToRegister.href = "./view/pages/register";
+  linkToRegister.textContent = "Registro";
+  linkToRegister.classList.add("link");
+
+  const linkToRegisterOng = document.createElement("a");
+  linkToRegisterOng.href = "../view/pages/registerOng";
+  linkToRegisterOng.textContent = "Registro de Ongs";
+  linkToRegisterOng.classList.add("link");
+
+  const linkToRegisterLar = document.createElement("a");
+  linkToRegisterLar.href = "../view/pages/registerLar";
+  linkToRegisterLar.textContent = "Registro de Lares Temporários";
+  linkToRegisterLar.classList.add("link");
+
+  const linkToLogin = document.createElement("a");
+  linkToLogin.href = "./view/pages/login";
+  linkToLogin.textContent = "Login";
+  linkToLogin.classList.add("link");
+
+  const linkToLoginOng = document.createElement("a");
+  linkToLoginOng.href = "../view/pages/loginOng";
+  linkToLoginOng.textContent = "Login de Ongs";
+  linkToLoginOng.classList.add("link");
+
+  const linkToLoginLar = document.createElement("a");
+  linkToLoginLar.href = "../view/pages/loginLar";
+  linkToLoginLar.textContent = "Login de Lares Temporários";
+  linkToLoginLar.classList.add("link");
+
+  registerButton.addEventListener("click", () => {
+    showLogin = false;
+    login.style.display = "none";
+    showRegister = !showRegister;
+
+    if (showRegister) {
+      register.style.display = "block";
+      register.style.display = "flex";
+      register.style.flexDirection = "column";
+    } else {
+      register.style.display = "none";
+    }
+  });
+
+  loginButton.addEventListener("click", () => {
+    showRegister = false;
+    register.style.display = "none";
+    showLogin = !showLogin;
+
+    if (showLogin) {
+      login.style.display = "block";
+      login.style.display = "flex";
+      login.style.flexDirection = "column";
+    } else {
+      login.style.display = "none";
+    }
+  });
+
+  register.appendChild(linkToRegister);
+  register.appendChild(linkToRegisterOng);
+  register.appendChild(linkToRegisterLar);
+
+  login.appendChild(linkToLogin);
+  login.appendChild(linkToLoginOng);
+  login.appendChild(linkToLoginLar);
 
   buttons.appendChild(loginButton);
   buttons.appendChild(registerButton);
 
   div.appendChild(title);
   div.appendChild(buttons);
+  div.appendChild(login);
+  div.appendChild(register);
 
   document.body.appendChild(div);
 };
