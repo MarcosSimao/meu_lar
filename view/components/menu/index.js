@@ -1,4 +1,4 @@
-const menu = () => {
+const menu = (loginPerson, loginLar, loginOng, registerPerson, registerLar, registerOng) => {
   const div = document.createElement("div");
   div.classList.add("menu");
 
@@ -28,32 +28,32 @@ const menu = () => {
   registerButton.classList.add("registerButton");
 
   const linkToRegister = document.createElement("a");
-  linkToRegister.href = "./view/pages/register";
+  linkToRegister.href = registerPerson;
   linkToRegister.textContent = "Registro";
   linkToRegister.classList.add("link");
 
   const linkToRegisterOng = document.createElement("a");
-  linkToRegisterOng.href = "../view/pages/registerOng";
+  linkToRegisterOng.href = registerOng;
   linkToRegisterOng.textContent = "Registro de Ongs";
   linkToRegisterOng.classList.add("link");
 
   const linkToRegisterLar = document.createElement("a");
-  linkToRegisterLar.href = "../view/pages/registerLar";
+  linkToRegisterLar.href = registerLar;
   linkToRegisterLar.textContent = "Registro de Lares Temporários";
   linkToRegisterLar.classList.add("link");
 
   const linkToLogin = document.createElement("a");
-  linkToLogin.href = "./view/pages/login";
+  linkToLogin.href = loginPerson;
   linkToLogin.textContent = "Login";
   linkToLogin.classList.add("link");
-
+  
   const linkToLoginOng = document.createElement("a");
-  linkToLoginOng.href = "../view/pages/loginOng";
+  linkToLoginOng.href = loginOng;
   linkToLoginOng.textContent = "Login de Ongs";
   linkToLoginOng.classList.add("link");
-
+  
   const linkToLoginLar = document.createElement("a");
-  linkToLoginLar.href = "../view/pages/loginLar";
+  linkToLoginLar.href = loginLar;
   linkToLoginLar.textContent = "Login de Lares Temporários";
   linkToLoginLar.classList.add("link");
 
@@ -103,5 +103,3 @@ const menu = () => {
 
   document.body.appendChild(div);
 };
-
-menu();

@@ -46,4 +46,13 @@ const login = async (evt) => {
   }, 5500);
 };
 
+const loginPerson = '../login'
+const loginLar = '../loginLar'
+const loginOng = '../loginOng'
+const registerPerson = '../register'
+const registerLar = '../registerLar'
+const registerOng = '../registerOng'
+
+menu(loginPerson, loginLar, loginOng, registerPerson, registerLar, registerOng);
+
 loginButton.addEventListener("click", (evt) => login(evt));
